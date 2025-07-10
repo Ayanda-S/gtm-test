@@ -42,7 +42,7 @@
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
-                    return response.json(); // or response.text() if it's plain text
+                    return response.text(); // or response.text() if it's plain text
                 })
                 .then(data => {
                     console.log('Success:', data);
