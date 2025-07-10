@@ -23,12 +23,11 @@
         const value = params.get('value');
 
         window.dataLayer = window.dataLayer || [];
-        let data = {};
-        if (key && value){
+        if (key && value) {
+            let data = {};
             data[key] = value;
         }
         window.dataLayer.push(data);
-        console.log('Pushed data to Data Layer: ', data);
     </script>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4HQJ758" height="0" width="0"
@@ -36,6 +35,25 @@
     <!-- End Google Tag Manager (noscript) -->
     <h1>Welcome to My Simplest Website</h1>
     <button onclick="alert('Button clicked!')">Click Me!</button>
+    <script>
+        function makeRequest() {
+            fetch('http://httpbin.org/')  // Replace with your actual URL
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json(); // or response.text() if it's plain text
+                })
+                .then(data => {
+                    console.log('Success:', data);
+                    alert('Request successful! Check console for data.');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Request failed!');
+                });
+        }
+    </script>
 </body>
 
 </html>
