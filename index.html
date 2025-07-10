@@ -37,7 +37,7 @@
     <button onclick="makeRequest()">Click Me!</button>
     <script>
         function makeRequest() {
-            fetch('http://httpbin.org/')  // Replace with your actual URL
+            fetch('https://httpbin.org/')  // Replace with your actual URL
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
