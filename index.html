@@ -23,8 +23,8 @@
         const value = params.get('value');
 
         window.dataLayer = window.dataLayer || [];
+        let data = {};
         if (key && value) {
-            let data = {};
             data[key] = value;
         }
         window.dataLayer.push(data);
