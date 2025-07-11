@@ -37,7 +37,7 @@
     <button onclick="makeRequest()">Click My Simple Button!</button>
     <script>
         function makeRequest() {
-            fetch('https://httpbin.org/') 
+            fetch(`https://httpbin.org/get?key=${key}&value=${value}`) 
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Error occured!');
